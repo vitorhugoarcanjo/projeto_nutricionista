@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { Button } from '../../ui/Button/Button'
 import styles from './Header.module.css'
 
@@ -22,6 +22,10 @@ export function Header() {
 
   function closeMenu() {
     setMenuOpen(false)
+  }
+
+  function navLinkClass({ isActive }: { isActive: boolean }) {
+    return isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink
   }
 
   return (
@@ -50,24 +54,27 @@ export function Header() {
               ) : (
                 <span className={`${styles.planBadge} ${styles.planFree}`}>Gratuito</span>
               )}
-              <Link to="/app" className={styles.navLink} onClick={closeMenu}>
+              <NavLink to="/app" end className={navLinkClass} onClick={closeMenu}>
                 Dashboard
-              </Link>
-              <Link to="/app/paciente/1" className={styles.navLink} onClick={closeMenu}>
+              </NavLink>
+              <NavLink to="/app/paciente/1" className={navLinkClass} onClick={closeMenu}>
                 Pacientes
-              </Link>
-              <Link to="/app/ebook" className={styles.navLink} onClick={closeMenu}>
+              </NavLink>
+              <NavLink to="/app/treino/1" className={navLinkClass} onClick={closeMenu}>
+                Treinos
+              </NavLink>
+              <NavLink to="/app/ebook" className={navLinkClass} onClick={closeMenu}>
                 Ebook
-              </Link>
-              <Button variant="ghost" size="sm" onClick={handleLogout}>
+              </NavLink>
+              <button className={styles.navLinkBtn} onClick={handleLogout}>
                 Sair
-              </Button>
+              </button>
             </>
           ) : (
             <>
-              <Link to="/" className={styles.navLink} onClick={closeMenu}>
+              <NavLink to="/" end className={navLinkClass} onClick={closeMenu}>
                 Início
-              </Link>
+              </NavLink>
               <a href="/#sobre" className={styles.navLink} onClick={closeMenu}>
                 Sobre
               </a>

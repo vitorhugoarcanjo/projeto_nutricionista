@@ -1,21 +1,21 @@
 :root {
-  /* ===== Cores primárias (verde suave) ===== */
-  --color-primary: #5b8a72;
-  --color-primary-dark: #446b58;
-  --color-primary-light: #d4e8dc;
-  --color-primary-soft: #f0f7f3;
+  /* ===== Cores primárias (lilás/lavanda) ===== */
+  --color-primary: #8b7fb8;
+  --color-primary-dark: #6f65a0;
+  --color-primary-light: #ddd6f0;
+  --color-primary-soft: #f3f0fa;
 
-  /* ===== Cores de destaque (rosa/terracota — feminino) ===== */
-  --color-accent: #d4857f;
-  --color-accent-dark: #b86b65;
-  --color-accent-light: #f5ded9;
-  --color-accent-soft: #fdf3f1;
+  /* ===== Cores de destaque (pêssego suave) ===== */
+  --color-accent: #e8a87c;
+  --color-accent-dark: #d18d5e;
+  --color-accent-light: #fbe4d4;
+  --color-accent-soft: #fdf5ef;
 
   /* ===== Cores neutras quentes ===== */
   --color-bg: #ffffff;
   --color-bg-alt: #faf8f5;
-  --color-bg-soft: #f5f2ed;
-  --color-text: #2d2a26;
+  --color-bg-soft: #f5f1ec;
+  --color-text: #3a3530;
   --color-text-muted: #8a827a;
   --color-border: #ece7e1;
   --color-border-soft: #f2eeea;
@@ -23,12 +23,12 @@
   /* ===== Estados ===== */
   --color-danger: #c65d5d;
   --color-danger-soft: #fbe5e5;
-  --color-success: #5b8a72;
-  --color-success-soft: #d4e8dc;
+  --color-success: #6ba389;
+  --color-success-soft: #dcefe5;
   --color-warning: #d4a574;
   --color-warning-soft: #faf0e1;
 
-  /* ===== Tipografia (tamanhos menores e mais controlados) ===== */
+  /* ===== Tipografia ===== */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
@@ -54,11 +54,11 @@
   --radius-lg: 16px;
   --radius-full: 9999px;
 
-  /* ===== Sombras (mais suaves) ===== */
-  --shadow-xs: 0 1px 2px rgba(45, 42, 38, 0.03);
-  --shadow-sm: 0 1px 3px rgba(45, 42, 38, 0.04), 0 1px 2px rgba(45, 42, 38, 0.03);
-  --shadow-md: 0 4px 12px rgba(45, 42, 38, 0.05), 0 2px 4px rgba(45, 42, 38, 0.03);
-  --shadow-lg: 0 12px 24px rgba(45, 42, 38, 0.07), 0 4px 8px rgba(45, 42, 38, 0.04);
+  /* ===== Sombras (suaves, quentes) ===== */
+  --shadow-xs: 0 1px 2px rgba(58, 53, 48, 0.03);
+  --shadow-sm: 0 1px 3px rgba(58, 53, 48, 0.04), 0 1px 2px rgba(58, 53, 48, 0.03);
+  --shadow-md: 0 4px 12px rgba(58, 53, 48, 0.05), 0 2px 4px rgba(58, 53, 48, 0.03);
+  --shadow-lg: 0 12px 24px rgba(58, 53, 48, 0.07), 0 4px 8px rgba(58, 53, 48, 0.04);
 
   /* ===== Layout ===== */
   --max-width: 1120px;

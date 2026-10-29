@@ -1,8 +1,17 @@
 .page {
-  padding: var(--space-8) var(--space-4) var(--space-16);
+  padding: var(--space-8) var(--space-6) var(--space-16);
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
+}
+
+/* ========== TOPBAR ========== */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
 }
 
 /* ========== BREADCRUMB ========== */
@@ -34,12 +43,12 @@
 .title {
   font-size: var(--font-size-2xl);
   font-weight: 800;
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-1);
 }
 
 .subtitle {
   color: var(--color-text-muted);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
 }
 
 /* ========== OBSERVAÇÕES ========== */
@@ -49,7 +58,7 @@
   padding: var(--space-4);
   background-color: var(--color-primary-soft);
   border: 1px solid var(--color-primary-light);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-xs);
   align-items: flex-start;
 }
@@ -70,12 +79,12 @@
 .refeicoesSection {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 .sectionTitle {
-  font-size: var(--font-size-xl);
-  font-weight: 800;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
 }
 
 .refeicoesList {
@@ -84,19 +93,17 @@
   gap: var(--space-3);
 }
 
-.card {
-  padding: var(--space-6);
+.refeicaoCard {
   background-color: var(--color-bg);
   border: 1px solid var(--color-border-soft);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+  transition: box-shadow var(--transition-base);
 }
 
 .refeicaoCard:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .refeicaoHeader {
@@ -107,7 +114,7 @@
   padding: var(--space-4);
   background: none;
   text-align: left;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--transition-base);
 }
 
 .refeicaoHeader:hover {
@@ -121,24 +128,24 @@
 }
 
 .refeicaoIcone {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   line-height: 1;
 }
 
 .refeicaoNome {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   font-weight: 700;
 }
 
 .refeicaoHorario {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
 }
 
 .chevron {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   color: var(--color-text-muted);
-  transition: transform 0.2s ease;
+  transition: transform var(--transition-base);
 }
 
 .chevronAberto {
@@ -148,17 +155,17 @@
 /* ========== BODY (alimentos) ========== */
 .refeicaoBody {
   padding: 0 var(--space-4) var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border-soft);
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  border-top: 1px solid var(--color-border);
-  padding-top: var(--space-4);
+  gap: var(--space-2);
 }
 
 .alimentoItem {
   padding: var(--space-3);
-  background-color: var(--color-bg-alt);
-  border-radius: var(--radius-md);
+  background-color: var(--color-bg-soft);
+  border-radius: var(--radius-sm);
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
@@ -167,18 +174,18 @@
 .alimentoHeader {
   display: flex;
   justify-content: space-between;
-  gap: var(--space-3);
+  gap: var(--space-2);
   flex-wrap: wrap;
 }
 
 .alimentoNome {
   font-weight: 600;
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
 }
 
 .alimentoQtd {
   color: var(--color-text-muted);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
 }
 
 .substituicoes {
@@ -210,12 +217,15 @@
   font-weight: 500;
 }
 
-/* ========== AÇÕES ========== */
-.actions {
+/* ========== FOOTER ACTIONS ========== */
+.footerActions {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: var(--space-3);
   flex-wrap: wrap;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-soft);
 }
 
 /* ========== NOT FOUND ========== */
@@ -239,20 +249,21 @@
     font-size: var(--font-size-xl);
   }
 
-  .header {
+  .topbar {
     flex-direction: column;
+    align-items: stretch;
   }
 
-  .header > * {
+  .topbar > * {
     width: 100%;
   }
 
-  .header button {
+  .topbar button {
     width: 100%;
   }
 
   .sectionTitle {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
   }
 
   .refeicaoHeader {
@@ -269,15 +280,15 @@
     gap: var(--space-1);
   }
 
-  .actions {
+  .footerActions {
     flex-direction: column-reverse;
   }
 
-  .actions > * {
+  .footerActions > * {
     width: 100%;
   }
 
-  .actions button {
+  .footerActions button {
     width: 100%;
   }
 }

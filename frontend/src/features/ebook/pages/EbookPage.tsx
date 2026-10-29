@@ -2,21 +2,29 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Layout } from '../../../components/layout/Layout'
 import { Button } from '../../../components/ui/Button/Button'
-import { ebookMock } from '../../../mocks/ebook'
+import { ebooksMock } from '../../../mocks/ebook'
 import styles from './EbookPage.module.css'
 
 export default function EbookPage() {
   const [premiumAtivo, setPremiumAtivo] = useState(false)
+  const [ebookAtivoId, setEbookAtivoId] = useState<string>(ebooksMock[0].id)
   const [capituloAberto, setCapituloAberto] = useState<string | null>(null)
 
   useEffect(() => {
     setPremiumAtivo(localStorage.getItem('premium_ativo') === 'true')
   }, [])
 
+  const ebook = ebooksMock.find((e) => e.id === ebookAtivoId) ?? ebooksMock[0]
+
   function handleAssinar() {
     localStorage.setItem('premium_ativo', 'true')
     setPremiumAtivo(true)
     alert('Plano Premium ativado! (simulação)')
+  }
+
+  function trocarEbook(id: string) {
+    setEbookAtivoId(id)
+    setCapituloAberto(null)
   }
 
   return (
@@ -26,8 +34,27 @@ export default function EbookPage() {
         <nav className={styles.breadcrumb}>
           <Link to="/app">Dashboard</Link>
           <span>/</span>
-          <span>Ebook</span>
+          <span>Ebooks</span>
         </nav>
+
+        {/* Seletor de ebook */}
+        <div className={styles.selector}>
+          {ebooksMock.map((e) => (
+            <button
+              key={e.id}
+              className={`${styles.selectorBtn} ${ebookAtivoId === e.id ? styles.selectorBtnActive : ''}`}
+              onClick={() => trocarEbook(e.id)}
+            >
+              <span className={styles.selectorIcon}>{e.capaEmoji}</span>
+              <div className={styles.selectorText}>
+                <span className={styles.selectorCategoria}>
+                  {e.categoria === 'alimentacao' ? 'Alimentação' : 'Treino'}
+                </span>
+                <span className={styles.selectorTitulo}>{e.titulo}</span>
+              </div>
+            </button>
+          ))}
+        </div>
 
         {/* Capa */}
         <header className={styles.capa}>
@@ -35,8 +62,8 @@ export default function EbookPage() {
             <span className={`${styles.badge} ${premiumAtivo ? styles.badgeAtivo : styles.badgeBloqueado}`}>
               {premiumAtivo ? '✓ Premium ativo' : '🔒 Conteúdo Premium'}
             </span>
-            <h1 className={styles.title}>{ebookMock.titulo}</h1>
-            <p className={styles.subtitle}>{ebookMock.subtitulo}</p>
+            <h1 className={styles.title}>{ebook.titulo}</h1>
+            <p className={styles.subtitle}>{ebook.subtitulo}</p>
 
             {!premiumAtivo && (
               <div className={styles.ctaBox}>
@@ -54,10 +81,10 @@ export default function EbookPage() {
         {/* Capítulos */}
         <section className={styles.capitulosSection}>
           <h2 className={styles.sectionTitle}>
-            Capítulos <span className={styles.capitulosCount}>({ebookMock.capitulos.length})</span>
+            Capítulos <span className={styles.capitulosCount}>({ebook.capitulos.length})</span>
           </h2>
           <div className={styles.capitulosList}>
-            {ebookMock.capitulos.map((cap, idx) => {
+            {ebook.capitulos.map((cap, idx) => {
               const bloqueado = !premiumAtivo
               const aberto = capituloAberto === cap.id
 
@@ -102,8 +129,7 @@ export default function EbookPage() {
                       <p className={styles.conteudoSimulado}>
                         Este é o conteúdo completo do capítulo (simulado para preview). Na versão final,
                         aqui viria o texto, imagens, receitas, listas e tudo que faz parte deste capítulo
-                        do ebook. O conteúdo pode incluir formatação rica, tabelas, receitas passo a passo
-                        e muito mais.
+                        do ebook.
                       </p>
                       <div className={styles.conteudoPlaceholder}>
                         📖 Conteúdo completo do capítulo disponível na versão final

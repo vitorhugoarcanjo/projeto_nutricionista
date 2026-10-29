@@ -1,8 +1,8 @@
 .page {
-  padding: var(--space-8) var(--space-4) var(--space-16);
+  padding: var(--space-8) var(--space-6) var(--space-16);
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
+  gap: var(--space-6);
 }
 
 /* ========== BANNER PREVIEW ========== */
@@ -11,10 +11,10 @@
   justify-content: space-between;
   align-items: center;
   gap: var(--space-4);
-  padding: var(--space-4);
-  background-color: #fffaf0;
-  border: 1px solid #fbd38d;
-  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-accent-soft);
+  border: 1px solid var(--color-accent-light);
+  border-radius: var(--radius-md);
   flex-wrap: wrap;
 }
 
@@ -28,45 +28,107 @@
 .header {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-1);
 }
 
 .title {
   font-size: var(--font-size-2xl);
   font-weight: 800;
-  letter-spacing: -0.02em;
 }
 
 .subtitle {
   color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* ========== TABS ========== */
+.tabs {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  padding-bottom: var(--space-1);
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabs::-webkit-scrollbar {
+  height: 4px;
+}
+
+.tabs::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background-color: transparent;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.tab:hover {
+  background-color: var(--color-bg-alt);
+  color: var(--color-text);
+}
+
+.tabActive {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.tabActive:hover {
+  background-color: var(--color-primary-dark);
+  color: white;
+}
+
+.tabIcon {
   font-size: var(--font-size-base);
+  line-height: 1;
+}
+
+.tabLabel {
+  font-size: var(--font-size-sm);
 }
 
 /* ========== STATS ========== */
 .stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 .statCard {
   padding: var(--space-4);
   background-color: var(--color-bg);
   border: 1px solid var(--color-border-soft);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
 }
 
 .statLabel {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
 }
 
 .statValue {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-sm);
   font-weight: 700;
   color: var(--color-text);
 }
@@ -80,6 +142,12 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .sectionHeader {
@@ -91,43 +159,64 @@
 }
 
 .sectionTitle {
-  font-size: var(--font-size-xl);
-  font-weight: 800;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
 }
 
-/* ========== REFEIÇÕES ========== */
+.linkBtn {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition-base);
+}
+
+.linkBtn:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+/* ========== REFEIÇÕES / TREINOS ========== */
 .refeicoesGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
 }
 
 .refeicaoCard {
   padding: var(--space-4);
   background-color: var(--color-bg);
   border: 1px solid var(--color-border-soft);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+  transition: box-shadow var(--transition-base);
+}
+
+.refeicaoCard:hover {
+  box-shadow: var(--shadow-sm);
 }
 
 .refeicaoHeader {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  padding-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
   border-bottom: 1px solid var(--color-border-soft);
 }
 
 .refeicaoIcon {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   line-height: 1;
 }
 
 .refeicaoNome {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   font-weight: 700;
 }
 
@@ -149,7 +238,7 @@
   display: flex;
   justify-content: space-between;
   gap: var(--space-2);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
 }
 
 .alimentoQtd {
@@ -161,83 +250,110 @@
 .conteudosGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 .conteudoCard {
   display: flex;
   gap: var(--space-3);
-  padding: var(--space-4);
+  padding: var(--space-3);
   background-color: var(--color-bg);
   border: 1px solid var(--color-border-soft);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
   align-items: flex-start;
 }
 
 .conteudoIcon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1;
   flex-shrink: 0;
 }
 
 .conteudoTitle {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   font-weight: 700;
 }
 
 .conteudoDesc {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
   line-height: 1.5;
 }
 
-/* ========== EBOOK ========== */
+/* ========== EBOOKS ========== */
+.ebooksGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
 .ebookCard {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
-  padding: var(--space-6);
+  gap: var(--space-3);
+  padding: var(--space-4);
   background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-bg) 100%);
   border: 1px solid var(--color-primary-light);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
   flex-wrap: wrap;
+  transition: box-shadow var(--transition-base);
+}
+
+.ebookCard:hover {
+  box-shadow: var(--shadow-sm);
 }
 
 .ebookIcon {
-  font-size: 3rem;
+  font-size: 2rem;
   line-height: 1;
+  flex-shrink: 0;
 }
 
 .ebookBody {
   flex: 1;
-  min-width: 200px;
+  min-width: 150px;
+}
+
+.ebookCategoria {
+  display: block;
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  font-weight: 700;
+  margin-bottom: 2px;
 }
 
 .ebookTitle {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-sm);
   font-weight: 700;
   margin-bottom: var(--space-1);
 }
 
 .ebookDesc {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
+  line-height: 1.5;
 }
 
 /* ========== RESPONSIVO ========== */
 @media (max-width: 1024px) {
   .refeicoesGrid,
   .conteudosGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  .ebooksGrid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
   .page {
     padding: var(--space-6) var(--space-4) var(--space-12);
-    gap: var(--space-6);
+    gap: var(--space-4);
   }
 
   .title {
@@ -246,16 +362,24 @@
 
   .stats {
     grid-template-columns: 1fr;
-    gap: var(--space-3);
   }
 
-  .refeicoesGrid,
-  .conteudosGrid {
-    grid-template-columns: 1fr;
+  .tabs {
+    margin: 0 calc(-1 * var(--space-4));
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  .tab {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .tabLabel {
+    font-size: var(--font-size-xs);
   }
 
   .sectionTitle {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
   }
 
   .previewBanner {

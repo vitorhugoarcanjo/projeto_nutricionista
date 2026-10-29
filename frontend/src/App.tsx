@@ -11,6 +11,8 @@ const PacienteVisao = lazy(() => import('./features/dashboard/pages/PacienteVisa
 const Paciente = lazy(() => import('./features/paciente/pages/PacientePage'))
 const PlanoAlimentar = lazy(() => import('./features/plano-alimentar/pages/PlanoAlimentarPage'))
 const Ebook = lazy(() => import('./features/ebook/pages/EbookPage'))
+const Treino = lazy(() => import('./features/treino/pages/TreinoPage'))
+const Checkout = lazy(() => import('./features/checkout/pages/CheckoutPage'))
 
 function PageLoader() {
   return (
@@ -36,6 +38,8 @@ export default function App() {
             <Route path="/app/plano-alimentar/:id" element={<PlanoAlimentar />} />
             <Route path="/app/ebook" element={<Ebook />} />
             <Route path="/app/paciente-visao" element={<PacienteVisao />} />
+            <Route path="/app/treino/:id" element={<Treino />} />
+            <Route path="/app/checkout" element={<Checkout />} />
           </Route>
 
           {/* Fallback */}

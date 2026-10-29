@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import { Layout } from '../../../components/layout/Layout'
 import { Button } from '../../../components/ui/Button/Button'
 import { pacientesMock } from '../../../mocks/pacientes'
@@ -8,6 +8,7 @@ import styles from './PlanoAlimentarPage.module.css'
 
 export default function PlanoAlimentarPage() {
   const { id } = useParams<{ id: string }>()
+  const navigate = useNavigate()
   const paciente = pacientesMock.find((p) => p.id === id)
   const plano = id ? planosMock[id] : undefined
 
@@ -20,7 +21,7 @@ export default function PlanoAlimentarPage() {
           <h1>Plano não encontrado</h1>
           <p>Não há plano alimentar para o paciente com id "{id}".</p>
           <Link to="/app">
-            <Button>Voltar para o dashboard</Button>
+            <Button variant="secondary">Voltar para o dashboard</Button>
           </Link>
         </div>
       </Layout>
@@ -30,6 +31,16 @@ export default function PlanoAlimentarPage() {
   return (
     <Layout>
       <div className={`container ${styles.page}`}>
+        {/* Topbar */}
+        <div className={styles.topbar}>
+          <Button variant="ghost" size="sm" onClick={() => navigate('/app')}>
+            ← Voltar
+          </Button>
+          <Link to={`/app/treino/${paciente.id}`}>
+            <Button size="sm">Ver treino →</Button>
+          </Link>
+        </div>
+
         {/* Breadcrumb */}
         <nav className={styles.breadcrumb}>
           <Link to="/app">Dashboard</Link>
@@ -47,9 +58,6 @@ export default function PlanoAlimentarPage() {
               Paciente: <strong>{paciente.nome}</strong> • {paciente.objetivo}
             </p>
           </div>
-          <Link to={`/app/paciente/${paciente.id}`}>
-            <Button variant="secondary">Ver ficha do paciente</Button>
-          </Link>
         </header>
 
         {/* Observações */}
@@ -114,13 +122,13 @@ export default function PlanoAlimentarPage() {
           </div>
         </section>
 
-        {/* Ações */}
-        <div className={styles.actions}>
+        {/* Rodapé: Voltar + ação secundária */}
+        <div className={styles.footerActions}>
+          <Button variant="ghost" size="sm" onClick={() => navigate('/app')}>
+            ← Voltar para o dashboard
+          </Button>
           <Link to={`/app/paciente/${paciente.id}`}>
-            <Button variant="ghost">← Voltar para a ficha</Button>
-          </Link>
-          <Link to="/app">
-            <Button variant="secondary">Dashboard</Button>
+            <Button variant="secondary" size="sm">Ver ficha do paciente →</Button>
           </Link>
         </div>
       </div>

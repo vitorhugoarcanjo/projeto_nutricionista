@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import { Layout } from '../../../components/layout/Layout'
 import { Button } from '../../../components/ui/Button/Button'
 import { pacientesMock } from '../../../mocks/pacientes'
@@ -6,6 +6,7 @@ import styles from './PacientePage.module.css'
 
 export default function PacientePage() {
   const { id } = useParams<{ id: string }>()
+  const navigate = useNavigate()
   const paciente = pacientesMock.find((p) => p.id === id)
 
   if (!paciente) {
@@ -15,7 +16,7 @@ export default function PacientePage() {
           <h1>Paciente não encontrado</h1>
           <p>O paciente com id "{id}" não existe na base.</p>
           <Link to="/app">
-            <Button>Voltar para o dashboard</Button>
+            <Button variant="secondary">Voltar para o dashboard</Button>
           </Link>
         </div>
       </Layout>
@@ -29,12 +30,24 @@ export default function PacientePage() {
   return (
     <Layout>
       <div className={`container ${styles.page}`}>
+        {/* Topbar: Voltar + ação principal */}
+        <div className={styles.topbar}>
+          <Button variant="ghost" size="sm" onClick={() => navigate('/app')}>
+            ← Voltar
+          </Button>
+          <Link to={`/app/plano-alimentar/${paciente.id}`}>
+            <Button size="sm">Ver plano alimentar →</Button>
+          </Link>
+        </div>
+
+        {/* Breadcrumb */}
         <nav className={styles.breadcrumb}>
           <Link to="/app">Dashboard</Link>
           <span>/</span>
           <span>{paciente.nome}</span>
         </nav>
 
+        {/* Cabeçalho */}
         <header className={styles.header}>
           <div className={styles.headerLeft}>
             <div className={styles.avatar}>{paciente.nome.charAt(0)}</div>
@@ -45,13 +58,9 @@ export default function PacientePage() {
               </p>
             </div>
           </div>
-          <div className={styles.headerActions}>
-            <Link to={`/app/plano-alimentar/${paciente.id}`}>
-              <Button>Ver plano alimentar</Button>
-            </Link>
-          </div>
         </header>
 
+        {/* Grid de informações */}
         <div className={styles.grid}>
           <section className={styles.card}>
             <h2 className={styles.cardTitle}>Dados pessoais</h2>
@@ -120,6 +129,7 @@ export default function PacientePage() {
           </section>
         </div>
 
+        {/* Histórico */}
         <section className={styles.card}>
           <h2 className={styles.cardTitle}>Histórico de consultas</h2>
           <div className={styles.historicoList}>
@@ -144,12 +154,13 @@ export default function PacientePage() {
           </div>
         </section>
 
-        <div className={styles.actions}>
-          <Link to="/app">
-            <Button variant="ghost">← Voltar para o dashboard</Button>
-          </Link>
-          <Link to={`/app/plano-alimentar/${paciente.id}`}>
-            <Button>Ver plano alimentar →</Button>
+        {/* Rodapé: Voltar + ação secundária */}
+        <div className={styles.footerActions}>
+          <Button variant="ghost" size="sm" onClick={() => navigate('/app')}>
+            ← Voltar para o dashboard
+          </Button>
+          <Link to={`/app/treino/${paciente.id}`}>
+            <Button variant="secondary" size="sm">Ver treino →</Button>
           </Link>
         </div>
       </div>

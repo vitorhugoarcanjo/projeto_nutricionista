@@ -40,18 +40,19 @@ export default function LoginPage() {
 
   return (
     <div className={styles.page}>
-      {/* Lado esquerdo — marca/destaque */}
+      {/* Lado esquerdo — destaque */}
       <aside className={styles.aside}>
-      <Link to="/" className={styles.logoAside}>
-        Nutri <span>& Fit</span>
-      </Link>
+        <Link to="/" className={styles.logoAside}>
+          Nutri <span>& Fit</span>
+        </Link>
 
         <div className={styles.asideContent}>
+          <span className={styles.asideBadge}>Bem-vinda de volta</span>
           <h2 className={styles.asideTitle}>
-            Sua jornada de saúde começa aqui.
+            Sua jornada de saúde continua aqui.
           </h2>
           <p className={styles.asideText}>
-            Acesse seus conteúdos, plano alimentar e acompanhamento em um só lugar.
+            Acesse seus planos, treinos e conteúdos em um só lugar.
             Tudo pensado pra caber na sua rotina.
           </p>
 
@@ -59,6 +60,10 @@ export default function LoginPage() {
             <li>
               <span className={styles.checkIcon}>✓</span>
               Plano alimentar personalizado
+            </li>
+            <li>
+              <span className={styles.checkIcon}>✓</span>
+              Treino sob medida
             </li>
             <li>
               <span className={styles.checkIcon}>✓</span>
@@ -72,7 +77,7 @@ export default function LoginPage() {
         </div>
 
         <p className={styles.asideFooter}>
-          © {new Date().getFullYear()} NutriLauany
+          © {new Date().getFullYear()} Nutri & Fit by Lauany
         </p>
       </aside>
 

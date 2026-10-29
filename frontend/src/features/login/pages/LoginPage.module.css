@@ -15,14 +15,14 @@
 }
 
 .logoAside {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   font-weight: 800;
   color: white;
   letter-spacing: -0.02em;
 }
 
 .logoAside span {
-  color: var(--color-primary-light);
+  color: var(--color-accent-light);
 }
 
 .logoAside:hover {
@@ -32,8 +32,20 @@
 .asideContent {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
-  max-width: 420px;
+  gap: var(--space-4);
+  max-width: 400px;
+}
+
+.asideBadge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 4px 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .asideTitle {
@@ -56,30 +68,31 @@
   gap: var(--space-3);
   padding: 0;
   margin: 0;
+  margin-top: var(--space-2);
 }
 
 .asideList li {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   opacity: 0.95;
 }
 
 .checkIcon {
   display: grid;
   place-items: center;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: var(--radius-full);
   background-color: rgba(255, 255, 255, 0.2);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   font-weight: 800;
   flex-shrink: 0;
 }
 
 .asideFooter {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   opacity: 0.7;
 }
 
@@ -94,7 +107,7 @@
 
 .formWrapper {
   width: 100%;
-  max-width: 420px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
@@ -106,37 +119,37 @@
 }
 
 .logoMobile {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   font-weight: 800;
   color: var(--color-text);
   letter-spacing: -0.02em;
 }
 
 .logoMobile span {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 .formHeader {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-1);
 }
 
 .title {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-2xl);
   font-weight: 800;
   color: var(--color-text);
 }
 
 .subtitle {
   color: var(--color-text-muted);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 .field {
@@ -160,7 +173,7 @@
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .input:focus {
@@ -176,7 +189,7 @@
 
 .error {
   padding: var(--space-3);
-  background-color: #fed7d7;
+  background-color: var(--color-danger-soft);
   color: var(--color-danger);
   border-radius: var(--radius-md);
   font-size: var(--font-size-sm);
@@ -207,7 +220,7 @@
   background-color: var(--color-primary-soft);
   color: var(--color-primary-dark);
   border-radius: var(--radius-md);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   text-align: center;
 }
 

@@ -13,12 +13,12 @@ export default function LandingPage() {
       {/* HERO */}
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
-          <span className={styles.badge}>Nutrição personalizada</span>
+          <span className={styles.badge}>Nutrição + Treino</span>
           <h1 className={styles.heroTitle}>
             Transforme sua alimentação em <span className={styles.heroAccent}>qualidade de vida</span>
           </h1>
           <p className={styles.heroSubtitle}>
-            Planos alimentares feitos sob medida pra sua rotina, seu objetivo e seu paladar.
+            Planos alimentares e treinos feitos sob medida pra sua rotina, seu objetivo e seu paladar.
             Acompanhamento próximo, sem dietas malucas.
           </p>
           <div className={styles.heroActions}>
@@ -29,6 +29,20 @@ export default function LandingPage() {
               <Button size="lg" variant="secondary">Ver conteúdos</Button>
             </a>
           </div>
+          <div className={styles.heroStats}>
+            <div className={styles.heroStat}>
+              <strong>+8 anos</strong>
+              <span>de experiência</span>
+            </div>
+            <div className={styles.heroStat}>
+              <strong>+200</strong>
+              <span>pacientes atendidos</span>
+            </div>
+            <div className={styles.heroStat}>
+              <strong>100%</strong>
+              <span>personalizado</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -38,9 +52,9 @@ export default function LandingPage() {
           <div className={styles.sobreCard}>
             <h2 className={styles.sectionTitle}>Sobre a Lauany</h2>
             <p>
-              Nutricionista formada com especialização em nutrição clínica e comportamento alimentar.
-              Há mais de 8 anos ajudando pessoas a construírem uma relação saudável com a comida,
-              sem terrorismo nutricional e sem dietas restritivas.
+              Nutricionista e personal trainer com especialização em nutrição clínica e comportamento
+              alimentar. Há mais de 8 anos ajudando pessoas a construírem uma relação saudável com a
+              comida e com o corpo — sem terrorismo nutricional e sem dietas restritivas.
             </p>
             <p>
               Meu método é baseado em três pilares: <strong>individualidade</strong>,{' '}
@@ -105,7 +119,7 @@ export default function LandingPage() {
           <div className={styles.ctaBox}>
             <h2 className={styles.ctaTitle}>Pronto pra começar?</h2>
             <p className={styles.ctaSubtitle}>
-              Entre na sua área e acesse seus conteúdos, plano alimentar e acompanhamento.
+              Entre na sua área e acesse seus conteúdos, plano alimentar e treino.
             </p>
             <Link to="/login">
               <Button size="lg" variant="primary">Entrar na minha área</Button>
