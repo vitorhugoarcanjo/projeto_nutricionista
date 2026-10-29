@@ -44,29 +44,28 @@ button {
 }
 
 h1, h2, h3, h4 {
-  line-height: 1.3;
+  line-height: 1.25;
   font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .container {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--space-4);
+  padding: 0 var(--space-6);
 }
 
-/* Acessibilidade: foco visível */
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
 
-/* Animação de fade-in para páginas */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
@@ -74,7 +73,12 @@ h1, h2, h3, h4 {
   }
 }
 
-/* Aplicar fade-in em qualquer <main> */
 main {
-  animation: fadeInUp 0.3s ease;
+  animation: fadeInUp 0.25s ease;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-4);
+  }
 }

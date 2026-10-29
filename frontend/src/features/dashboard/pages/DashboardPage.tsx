@@ -28,35 +28,33 @@ export default function DashboardPage() {
   return (
     <Layout>
       <div className={`container ${styles.page}`}>
-        {/* Boas-vindas */}
         <header className={styles.header}>
           <div>
             <div className={styles.masterBadge}>
               <span className={styles.masterDot} />
-              Painel Master · Nutricionista
+              Painel Master
             </div>
             <h1 className={styles.title}>
-              Olá, {nomeUsuario || 'visitante'} 👋
+              Olá, {nomeUsuario || 'visitante'}
             </h1>
             <p className={styles.subtitle}>
-              Aqui você gerencia seus pacientes, planos e conteúdos.
+              Gerencie seus pacientes, planos e conteúdos.
             </p>
           </div>
           <div className={styles.headerActions}>
             <Link to="/app/paciente-visao">
-              <Button variant="secondary" size="md">
+              <Button variant="ghost" size="sm">
                 👁️ Ver como paciente
               </Button>
             </Link>
             {!premiumAtivo && (
-              <Button onClick={handleAssinar} size="md">
-                Assinar Premium
+              <Button onClick={handleAssinar} size="sm">
+                ⭐ Assinar Premium
               </Button>
             )}
           </div>
         </header>
 
-        {/* Resumo rápido */}
         <section className={styles.stats}>
           <div className={styles.statCard}>
             <div className={`${styles.statIcon} ${styles.statIconGreen}`}>👥</div>
@@ -66,24 +64,14 @@ export default function DashboardPage() {
             </div>
           </div>
           <div className={styles.statCard}>
-            <div className={`${styles.statIcon} ${styles.statIconBlue}`}>📅</div>
+            <div className={`${styles.statIcon} ${styles.statIconAccent}`}>📅</div>
             <div className={styles.statContent}>
               <span className={styles.statLabel}>Próximas consultas</span>
               <span className={styles.statValue}>{pacientesMock.length}</span>
             </div>
           </div>
-          <div className={styles.statCard}>
-            <div className={`${styles.statIcon} ${styles.statIconAmber}`}>⭐</div>
-            <div className={styles.statContent}>
-              <span className={styles.statLabel}>Plano</span>
-              <span className={`${styles.statValue} ${premiumAtivo ? styles.statPremium : ''}`}>
-                {premiumAtivo ? 'Premium' : 'Gratuito'}
-              </span>
-            </div>
-          </div>
         </section>
 
-        {/* Pacientes */}
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Meus pacientes</h2>
@@ -120,7 +108,6 @@ export default function DashboardPage() {
           </div>
         </section>
 
-        {/* Conteúdos gratuitos */}
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Conteúdos gratuitos</h2>
@@ -138,7 +125,6 @@ export default function DashboardPage() {
           </div>
         </section>
 
-        {/* Conteúdos premium */}
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Conteúdos Premium</h2>
@@ -178,11 +164,11 @@ export default function DashboardPage() {
 
 function getCorAvatar(nome: string): string {
   const paleta = [
-    'linear-gradient(135deg, #48bb78 0%, #2f855a 100%)',
-    'linear-gradient(135deg, #4299e1 0%, #2b6cb0 100%)',
-    'linear-gradient(135deg, #ed8936 0%, #c05621 100%)',
-    'linear-gradient(135deg, #9f7aea 0%, #6b46c1 100%)',
-    'linear-gradient(135deg, #f56565 0%, #c53030 100%)',
+    'linear-gradient(135deg, #a8d5ba 0%, #5b8a72 100%)',
+    'linear-gradient(135deg, #f5c6bf 0%, #d4857f 100%)',
+    'linear-gradient(135deg, #f0d9b5 0%, #d4a574 100%)',
+    'linear-gradient(135deg, #c9c2e0 0%, #8a7fb8 100%)',
+    'linear-gradient(135deg, #b8d4e0 0%, #6b9bb0 100%)',
   ]
   let hash = 0
   for (let i = 0; i < nome.length; i++) {

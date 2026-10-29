@@ -42,9 +42,9 @@ export default function LoginPage() {
     <div className={styles.page}>
       {/* Lado esquerdo — marca/destaque */}
       <aside className={styles.aside}>
-        <Link to="/" className={styles.logoAside}>
-          Nutri<span>Lauany</span>
-        </Link>
+      <Link to="/" className={styles.logoAside}>
+        Nutri <span>& Fit</span>
+      </Link>
 
         <div className={styles.asideContent}>
           <h2 className={styles.asideTitle}>
@@ -81,7 +81,7 @@ export default function LoginPage() {
         <div className={styles.formWrapper}>
           <div className={styles.mobileLogo}>
             <Link to="/" className={styles.logoMobile}>
-              Nutri<span>Lauany</span>
+              Nutri <span>& Fit</span>
             </Link>
           </div>
 

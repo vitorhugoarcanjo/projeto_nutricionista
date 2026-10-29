@@ -1,13 +1,17 @@
-/*frontend\src\components\layout\Header\Header.tsx */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Button } from '../../ui/Button/Button'
 import styles from './Header.module.css'
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [premiumAtivo, setPremiumAtivo] = useState(false)
   const navigate = useNavigate()
   const isLogged = Boolean(localStorage.getItem('auth_token'))
+
+  useEffect(() => {
+    setPremiumAtivo(localStorage.getItem('premium_ativo') === 'true')
+  }, [])
 
   function handleLogout() {
     localStorage.removeItem('auth_token')
@@ -24,7 +28,7 @@ export function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
         <Link to={isLogged ? '/app' : '/'} className={styles.logo} onClick={closeMenu}>
-          Nutri<span className={styles.logoAccent}>Lauany</span>
+          Nutri <span className={styles.logoAccent}>& Fit</span>
         </Link>
 
         <button
@@ -41,6 +45,11 @@ export function Header() {
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`}>
           {isLogged ? (
             <>
+              {premiumAtivo ? (
+                <span className={`${styles.planBadge} ${styles.planPremium}`}>⭐ Premium</span>
+              ) : (
+                <span className={`${styles.planBadge} ${styles.planFree}`}>Gratuito</span>
+              )}
               <Link to="/app" className={styles.navLink} onClick={closeMenu}>
                 Dashboard
               </Link>

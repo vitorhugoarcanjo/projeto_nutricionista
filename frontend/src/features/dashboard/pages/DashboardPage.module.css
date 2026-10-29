@@ -1,11 +1,10 @@
 .page {
-  padding: var(--space-8) var(--space-4) var(--space-16);
+  padding: var(--space-8) var(--space-6) var(--space-16);
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
 }
 
-/* ========== HEADER ========== */
 .header {
   display: flex;
   justify-content: space-between;
@@ -18,35 +17,33 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-1) var(--space-3);
+  padding: 3px 10px;
   background-color: var(--color-primary-light);
   color: var(--color-primary-dark);
   border-radius: var(--radius-full);
   font-size: var(--font-size-xs);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   margin-bottom: var(--space-2);
 }
 
 .masterDot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: var(--radius-full);
   background-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(47, 133, 90, 0.2);
 }
 
 .title {
   font-size: var(--font-size-2xl);
   font-weight: 800;
-  margin-bottom: var(--space-2);
-  letter-spacing: -0.02em;
+  margin-bottom: var(--space-1);
 }
 
 .subtitle {
   color: var(--color-text-muted);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
 }
 
 .headerActions {
@@ -55,37 +52,35 @@
   flex-wrap: wrap;
 }
 
-/* ========== STATS ========== */
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
 }
 
 .statCard {
   padding: var(--space-4);
   background-color: var(--color-bg);
   border: 1px solid var(--color-border-soft);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  transition: box-shadow var(--transition-base);
 }
 
 .statCard:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
 .statIcon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
   display: grid;
   place-items: center;
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   flex-shrink: 0;
 }
 
@@ -93,58 +88,51 @@
   background-color: var(--color-primary-soft);
 }
 
-.statIconBlue {
-  background-color: var(--color-accent-blue-soft);
-}
-
-.statIconAmber {
-  background-color: var(--color-accent-amber-soft);
+.statIconAccent {
+  background-color: var(--color-accent-soft);
 }
 
 .statContent {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: 2px;
   min-width: 0;
 }
 
 .statLabel {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
 }
 
 .statValue {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-xl);
   font-weight: 800;
   color: var(--color-text);
   line-height: 1.1;
 }
 
-.statPremium {
-  color: var(--color-primary);
-}
-
-/* ========== SEÇÕES ========== */
 .section {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 .sectionHeader {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
 .sectionTitle {
-  font-size: var(--font-size-xl);
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
 }
 
 .badgeAtivo {
-  padding: var(--space-1) var(--space-3);
+  padding: 2px 8px;
   background-color: var(--color-primary-light);
   color: var(--color-primary-dark);
   border-radius: var(--radius-full);
@@ -152,28 +140,27 @@
   font-weight: 700;
 }
 
-/* ========== PACIENTES ========== */
 .pacientesGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 .pacienteCard {
   padding: var(--space-4);
   background-color: var(--color-bg);
   border: 1px solid var(--color-border-soft);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
   transition: box-shadow var(--transition-base), transform var(--transition-base);
 }
 
 .pacienteCard:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
 }
 
 .pacienteHeader {
@@ -183,20 +170,19 @@
 }
 
 .avatar {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-full);
   color: white;
   display: grid;
   place-items: center;
   font-weight: 700;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   flex-shrink: 0;
-  box-shadow: var(--shadow-sm);
 }
 
 .pacienteNome {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   font-weight: 700;
 }
 
@@ -214,28 +200,25 @@
   flex: 1;
 }
 
-/* ========== CONTEÚDOS ========== */
 .conteudosGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 .conteudoCard {
   display: flex;
   gap: var(--space-3);
-  padding: var(--space-4);
+  padding: var(--space-3);
   background-color: var(--color-bg);
   border: 1px solid var(--color-border-soft);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-xs);
+  border-radius: var(--radius-md);
   align-items: flex-start;
-  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  transition: box-shadow var(--transition-base);
 }
 
 .conteudoCard:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
 .conteudoBloqueado {
@@ -244,7 +227,7 @@
 }
 
 .conteudoIcon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1;
   flex-shrink: 0;
 }
@@ -257,23 +240,22 @@
 }
 
 .conteudoTitle {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   font-weight: 700;
 }
 
 .conteudoDesc {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
   line-height: 1.5;
 }
 
 .lockLabel {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
   font-weight: 600;
 }
 
-/* ========== RESPONSIVO ========== */
 @media (max-width: 1024px) {
   .pacientesGrid,
   .conteudosGrid {
@@ -305,7 +287,6 @@
 
   .stats {
     grid-template-columns: 1fr;
-    gap: var(--space-3);
   }
 
   .pacientesGrid,
@@ -314,6 +295,6 @@
   }
 
   .sectionTitle {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
   }
 }

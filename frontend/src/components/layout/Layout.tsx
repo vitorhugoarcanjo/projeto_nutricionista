@@ -13,7 +13,7 @@ export function Layout({ children }: LayoutProps) {
       <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>
         <div className="container">
-          <p>© {new Date().getFullYear()} NutriLauany — Nutrição personalizada</p>
+          <p>© {new Date().getFullYear()} Nutri & Fit by Lauany</p>
         </div>
       </footer>
     </div>

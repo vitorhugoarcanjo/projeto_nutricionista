@@ -6,7 +6,7 @@
 
 /* ========== LADO ESQUERDO ========== */
 .aside {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
   color: white;
   padding: var(--space-8);
   display: flex;
@@ -123,7 +123,7 @@
 }
 
 .title {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-xl);
   font-weight: 800;
   color: var(--color-text);
 }
