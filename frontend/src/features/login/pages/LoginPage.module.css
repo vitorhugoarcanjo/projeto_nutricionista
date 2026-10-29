@@ -1,0 +1,239 @@
+.page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* ========== LADO ESQUERDO ========== */
+.aside {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logoAside {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.logoAside span {
+  color: var(--color-primary-light);
+}
+
+.logoAside:hover {
+  color: white;
+}
+
+.asideContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 420px;
+}
+
+.asideTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.asideText {
+  font-size: var(--font-size-base);
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.asideList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: 0;
+  margin: 0;
+}
+
+.asideList li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--font-size-base);
+  opacity: 0.95;
+}
+
+.checkIcon {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.asideFooter {
+  font-size: var(--font-size-sm);
+  opacity: 0.7;
+}
+
+/* ========== LADO DIREITO ========== */
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-4);
+  background-color: var(--color-bg);
+}
+
+.formWrapper {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.mobileLogo {
+  display: none;
+  text-align: center;
+}
+
+.logoMobile {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.logoMobile span {
+  color: var(--color-primary);
+}
+
+.formHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-base);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: inherit;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.input:disabled {
+  background-color: var(--color-bg-alt);
+  cursor: not-allowed;
+}
+
+.error {
+  padding: var(--space-3);
+  background-color: #fed7d7;
+  color: var(--color-danger);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.links {
+  text-align: right;
+}
+
+.link {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+}
+
+.link:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+.backLink {
+  text-align: center;
+  font-size: var(--font-size-sm);
+}
+
+.hint {
+  padding: var(--space-3);
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+
+/* ========== RESPONSIVO ========== */
+@media (max-width: 768px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .aside {
+    display: none;
+  }
+
+  .mobileLogo {
+    display: block;
+  }
+
+  .formHeader {
+    text-align: center;
+  }
+
+  .title {
+    font-size: var(--font-size-xl);
+  }
+
+  .main {
+    padding: var(--space-6) var(--space-4);
+  }
+}

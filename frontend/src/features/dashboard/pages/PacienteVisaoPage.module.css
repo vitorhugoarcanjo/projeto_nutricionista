@@ -1,0 +1,286 @@
+.page {
+  padding: var(--space-8) var(--space-4) var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* ========== BANNER PREVIEW ========== */
+.previewBanner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background-color: #fffaf0;
+  border: 1px solid #fbd38d;
+  border-radius: var(--radius-lg);
+  flex-wrap: wrap;
+}
+
+.previewBanner p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+/* ========== HEADER ========== */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-base);
+}
+
+/* ========== STATS ========== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.statCard {
+  padding: var(--space-4);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.statLabel {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.statValue {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.statPremium {
+  color: var(--color-primary);
+}
+
+/* ========== SEÇÕES ========== */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.sectionTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+}
+
+/* ========== REFEIÇÕES ========== */
+.refeicoesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.refeicaoCard {
+  padding: var(--space-4);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.refeicaoHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.refeicaoIcon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.refeicaoNome {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+}
+
+.refeicaoHorario {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.alimentosList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: 0;
+  margin: 0;
+}
+
+.alimentoItem {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+}
+
+.alimentoQtd {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+/* ========== CONTEÚDOS ========== */
+.conteudosGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.conteudoCard {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  align-items: flex-start;
+}
+
+.conteudoIcon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.conteudoTitle {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+}
+
+.conteudoDesc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ========== EBOOK ========== */
+.ebookCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-bg) 100%);
+  border: 1px solid var(--color-primary-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  flex-wrap: wrap;
+}
+
+.ebookIcon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.ebookBody {
+  flex: 1;
+  min-width: 200px;
+}
+
+.ebookTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+}
+
+.ebookDesc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* ========== RESPONSIVO ========== */
+@media (max-width: 1024px) {
+  .refeicoesGrid,
+  .conteudosGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: var(--space-6) var(--space-4) var(--space-12);
+    gap: var(--space-6);
+  }
+
+  .title {
+    font-size: var(--font-size-xl);
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .refeicoesGrid,
+  .conteudosGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    font-size: var(--font-size-lg);
+  }
+
+  .previewBanner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .previewBanner > * {
+    width: 100%;
+  }
+
+  .previewBanner button {
+    width: 100%;
+  }
+
+  .ebookCard {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ebookCard > * {
+    width: 100%;
+  }
+
+  .ebookCard button {
+    width: 100%;
+  }
+}

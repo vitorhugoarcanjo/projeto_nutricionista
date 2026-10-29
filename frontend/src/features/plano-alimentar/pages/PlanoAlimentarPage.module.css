@@ -1,0 +1,283 @@
+.page {
+  padding: var(--space-8) var(--space-4) var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb {
+  display: flex;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  flex-wrap: wrap;
+}
+
+.breadcrumb a {
+  color: var(--color-primary);
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* ========== HEADER ========== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-base);
+}
+
+/* ========== OBSERVAÇÕES ========== */
+.observacoes {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background-color: var(--color-primary-soft);
+  border: 1px solid var(--color-primary-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  align-items: flex-start;
+}
+
+.observacoesIcon {
+  font-size: var(--font-size-lg);
+  line-height: 1;
+}
+
+.observacoes p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  margin-top: var(--space-1);
+  line-height: 1.6;
+}
+
+/* ========== REFEIÇÕES ========== */
+.refeicoesSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+}
+
+.refeicoesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.card {
+  padding: var(--space-6);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.refeicaoCard:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.refeicaoHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4);
+  background: none;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.refeicaoHeader:hover {
+  background-color: var(--color-bg-alt);
+}
+
+.refeicaoHeaderLeft {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.refeicaoIcone {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.refeicaoNome {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+}
+
+.refeicaoHorario {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.chevron {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  transition: transform 0.2s ease;
+}
+
+.chevronAberto {
+  transform: rotate(180deg);
+}
+
+/* ========== BODY (alimentos) ========== */
+.refeicaoBody {
+  padding: 0 var(--space-4) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+}
+
+.alimentoItem {
+  padding: var(--space-3);
+  background-color: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.alimentoHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.alimentoNome {
+  font-weight: 600;
+  font-size: var(--font-size-base);
+}
+
+.alimentoQtd {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.substituicoes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.substituicoesLabel {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.substituicoesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.substituicaoTag {
+  padding: var(--space-1) var(--space-2);
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+/* ========== AÇÕES ========== */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* ========== NOT FOUND ========== */
+.notFound {
+  padding: var(--space-16) var(--space-4);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* ========== RESPONSIVO ========== */
+@media (max-width: 768px) {
+  .page {
+    padding: var(--space-6) var(--space-4) var(--space-12);
+    gap: var(--space-4);
+  }
+
+  .title {
+    font-size: var(--font-size-xl);
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .header > * {
+    width: 100%;
+  }
+
+  .header button {
+    width: 100%;
+  }
+
+  .sectionTitle {
+    font-size: var(--font-size-lg);
+  }
+
+  .refeicaoHeader {
+    padding: var(--space-3);
+  }
+
+  .refeicaoBody {
+    padding: 0 var(--space-3) var(--space-3);
+    padding-top: var(--space-3);
+  }
+
+  .alimentoHeader {
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .actions {
+    flex-direction: column-reverse;
+  }
+
+  .actions > * {
+    width: 100%;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}

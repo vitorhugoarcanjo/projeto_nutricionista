@@ -1,0 +1,319 @@
+.page {
+  padding: var(--space-8) var(--space-4) var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* ========== HEADER ========== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.masterBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-2);
+}
+
+.masterDot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(47, 133, 90, 0.2);
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-base);
+}
+
+.headerActions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+/* ========== STATS ========== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.statCard {
+  padding: var(--space-4);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.statCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.statIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.statIconGreen {
+  background-color: var(--color-primary-soft);
+}
+
+.statIconBlue {
+  background-color: var(--color-accent-blue-soft);
+}
+
+.statIconAmber {
+  background-color: var(--color-accent-amber-soft);
+}
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.statLabel {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.statValue {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.1;
+}
+
+.statPremium {
+  color: var(--color-primary);
+}
+
+/* ========== SEÇÕES ========== */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.badgeAtivo {
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+}
+
+/* ========== PACIENTES ========== */
+.pacientesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.pacienteCard {
+  padding: var(--space-4);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.pacienteCard:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.pacienteHeader {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.pacienteNome {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+}
+
+.pacienteInfo {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.pacienteActions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.pacienteActions > * {
+  flex: 1;
+}
+
+/* ========== CONTEÚDOS ========== */
+.conteudosGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.conteudoCard {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  align-items: flex-start;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.conteudoCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.conteudoBloqueado {
+  background-color: var(--color-bg-soft);
+  border-style: dashed;
+}
+
+.conteudoIcon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.conteudoBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.conteudoTitle {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+}
+
+.conteudoDesc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.lockLabel {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+/* ========== RESPONSIVO ========== */
+@media (max-width: 1024px) {
+  .pacientesGrid,
+  .conteudosGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: var(--space-6) var(--space-4) var(--space-12);
+    gap: var(--space-6);
+  }
+
+  .title {
+    font-size: var(--font-size-xl);
+  }
+
+  .headerActions {
+    width: 100%;
+  }
+
+  .headerActions > * {
+    flex: 1;
+  }
+
+  .headerActions button {
+    width: 100%;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .pacientesGrid,
+  .conteudosGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    font-size: var(--font-size-lg);
+  }
+}

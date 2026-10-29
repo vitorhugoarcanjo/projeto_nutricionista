@@ -1,0 +1,107 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+  height: var(--header-height);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.logo:hover {
+  color: var(--color-text);
+}
+
+.logoAccent {
+  color: var(--color-primary);
+}
+
+/* Navegação desktop */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.navLink {
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: var(--font-size-base);
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+}
+
+/* Hambúrguer (escondido no desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  padding: 0;
+}
+
+.hamburgerLine {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+  }
+
+  .navOpen {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .navLink {
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+  }
+
+  .navLink:hover {
+    background-color: var(--color-bg-alt);
+  }
+}

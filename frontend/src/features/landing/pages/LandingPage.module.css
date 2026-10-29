@@ -1,0 +1,248 @@
+/* ========== HERO ========== */
+.hero {
+  padding: var(--space-16) 0;
+  background: linear-gradient(180deg, var(--color-primary-soft) 0%, var(--color-bg) 100%);
+  text-align: center;
+}
+
+.heroInner {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.heroTitle {
+  font-size: var(--font-size-3xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.heroAccent {
+  color: var(--color-primary);
+}
+
+.heroSubtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.heroActions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+/* ========== SOBRE ========== */
+.sobre {
+  padding: var(--space-16) 0;
+}
+
+.sobreCard {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: var(--space-8);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sobreCard p {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ========== SEÇÕES GENÉRICAS ========== */
+.conteudos,
+.premium {
+  padding: var(--space-16) 0;
+}
+
+.premium {
+  background-color: var(--color-bg-alt);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  margin-bottom: var(--space-3);
+}
+
+.sectionSubtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========== GRID DE CARDS ========== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.card {
+  position: relative;
+  padding: var(--space-6);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.cardPremium {
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-primary-light);
+}
+
+.cardLock {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  font-size: var(--font-size-lg);
+}
+
+.cardIcon {
+  font-size: 2.5rem;
+}
+
+.cardTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+.cardDescription {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  flex: 1;
+}
+
+/* ========== CTA FINAL ========== */
+.cta {
+  padding: var(--space-16) 0;
+}
+
+.ctaBox {
+  padding: var(--space-12) var(--space-8);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.ctaTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+}
+
+.ctaSubtitle {
+  font-size: var(--font-size-lg);
+  opacity: 0.9;
+  max-width: 600px;
+}
+
+/* ========== RESPONSIVO ========== */
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-12) 0;
+  }
+
+  .heroTitle {
+    font-size: var(--font-size-2xl);
+  }
+
+  .heroSubtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .heroActions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .heroActions > * {
+    width: 100%;
+  }
+
+  .heroActions button {
+    width: 100%;
+  }
+
+  .sobre {
+    padding: var(--space-12) 0;
+  }
+
+  .sobreCard {
+    padding: var(--space-6);
+  }
+
+  .conteudos,
+  .premium,
+  .cta {
+    padding: var(--space-12) 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .sectionTitle {
+    font-size: var(--font-size-xl);
+  }
+
+  .sectionSubtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .ctaBox {
+    padding: var(--space-8) var(--space-4);
+  }
+
+  .ctaTitle {
+    font-size: var(--font-size-xl);
+  }
+
+  .ctaSubtitle {
+    font-size: var(--font-size-base);
+  }
+}
